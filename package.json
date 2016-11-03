@@ -1,0 +1,30 @@
+{
+  "name": "node-keyboard-talk",
+  "version": "1.0.0",
+  "description": "Notes for EmpireNode2016 talk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinjmoses/node-keyboard-talk.git"
+  },
+  "keywords": [
+    "node-keyboard"
+  ],
+  "author": "justinjmoses",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justinjmoses/node-keyboard-talk/issues"
+  },
+  "homepage": "https://github.com/justinjmoses/node-keyboard-talk#readme",
+  "dependencies": {
+    "cardinal": "^1.0.0",
+    "chalk": "^1.1.3",
+    "node-keyboard": "^3.6.0",
+    "osx-mouse": "^1.2.1",
+    "rxjs": "^5.0.0-rc.1",
+    "twitter-sentiment": "^1.0.0"
+  }
+}
