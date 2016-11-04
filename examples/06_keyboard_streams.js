@@ -1,6 +1,6 @@
 const { from, on, toAudio, delay } = require('node-keyboard/lib/streams')
 
-const midiIn = require('../lib/midi')()
+const midiIn = require('node-keyboard/lib/midi')()
 
 module.exports = () => {
 

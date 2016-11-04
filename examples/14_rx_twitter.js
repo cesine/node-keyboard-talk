@@ -1,15 +1,17 @@
 
-const Rx = require('rxjs/Rx')
+const Rx = require('node-keyboard/lib/rx')()
 const chalk = require('chalk')
 const twitterSentiment = require('twitter-sentiment')
 
 const play = require('node-keyboard/lib/mappers').play
 
+// track field https://dev.twitter.com/streaming/overview/request-parameters#track
+// 'X,Y' (=> OR) 'X Y' (AND)
 module.exports = ({ track, minFollowers }) => {
 
     const readable = twitterSentiment({ track, minFollowers })
 
-    const tweets = Rx.Observable.fromEvent(readable, 'data').
+    const tweets = Rx.Observable.fromEvent(readable, 'data')
 
     tweets.subscribe(tweet => {
         process.stdout.write(`score: ${tweet.sentiment.score}, comparative: ${tweet.sentiment.comparative.toFixed(2)}`)
@@ -21,5 +23,3 @@ module.exports = ({ track, minFollowers }) => {
 
 // talk_14_rx_twitter({ track: 'bieber', minFollowers: 500 }), undefined
 
-
-// NOTE: could filter out score: 0 - might be interesting

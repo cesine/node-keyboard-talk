@@ -1,6 +1,6 @@
 const { sequence, play } = require('node-keyboard/lib/mappers')
 
-const Rx = require('rxjs/Rx')
+const Rx = require('node-keyboard/lib/rx')()
 
 module.exports = (key = 'C') => {
     // modes with mode name

@@ -1,6 +1,6 @@
 const { sequence, piano, play } = require('node-keyboard/lib/mappers')
 
-const Rx = require('rxjs/Rx')
+const Rx = require('node-keyboard/lib/rx')()
 
 module.exports = (key = 'C3') => {
     const progression = [2, 2, 1, 2, 2, 2, 1]

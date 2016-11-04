@@ -1,4 +1,4 @@
-const Rx = require('rxjs/Rx')
+const Rx = require('node-keyboard/lib/rx')()
 
 const mouseEvents = require('osx-mouse')()
 
