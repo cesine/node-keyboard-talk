@@ -5,5 +5,4 @@ module.exports = () => {
     return Rx.Observable.stream(midiIn).flatMap(note => [note, 'c3', 'g4', 'c5'])
 }
 
-// var withCMajTriad = talk_08_rx_projection()
-// withCMajTriad.subscribe(play), undefined
+// talk_08_rx_projection().subscribe(play), undefined

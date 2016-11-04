@@ -7,5 +7,4 @@ module.exports = () => {
             .flatMap(note => [note, note.last || note])
 }
 
-// var prevNote = talk_09_rx_scan()
-// prevNote.subscribe(play), undefined
+// talk_09_rx_scan().subscribe(play), undefined

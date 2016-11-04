@@ -8,5 +8,4 @@ module.exports = () => {
     return readable
 }
 
-// var stream = talk_03_stream_on_read()
-// stream.pipe(process.stdout), undefined
+// talk_04_stream_immediate().pipe(process.stdout), undefined

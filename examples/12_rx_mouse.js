@@ -15,5 +15,4 @@ module.exports = ({ w, h } = { w: 2560, h: 1440 }) => {
     return throttledMidiNotes
 }
 
-// var mousy = talk_12_rx_mouse()
-// mousy.subscribe(play), undefined
+// talk_12_rx_mouse({ w: 1280, h: 720 }).subscribe(play), undefined

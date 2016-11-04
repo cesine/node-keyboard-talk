@@ -8,11 +8,6 @@ module.exports = ({ track, minFollowers }) => {
 
     const tweets = Rx.Observable.fromEvent(readable, 'data')
 
-
-    // const instruments = ['guitar', 'rock_organ']
-    // TODO
-    // track.split(/,\s/) and map each word to a different instrument
-
     return tweets.map(tweet => 48 + tweet.sentiment.score).flatMap(note => [ note, note + 12 ])
 }
 
