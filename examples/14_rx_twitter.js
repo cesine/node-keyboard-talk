@@ -16,14 +16,19 @@ module.exports = ({ track, minFollowers }) => {
 
     const cleaner = profanity.clean.bind(profanity)
 
-    tweets.finally(() => readable.emit('destroy')).subscribe(tweet => {
-        process.stdout.write(`score: ${tweet.sentiment.score}, comparative: ${tweet.sentiment.comparative.toFixed(2)}`)
+    const { stdout } = process;
 
-        process.stdout.write(` ${chalk.green(tweet.sentiment.positive.map(cleaner).join(' '))}`)
-        process.stdout.write(` ${chalk.red(tweet.sentiment.negative.map(cleaner).join(' '))}\n`)
-    })
+    return tweets
+        .do(({ sentiment }) => {
+            stdout.write(`score: ${sentiment.score}, comparative: ${sentiment.comparative.toFixed(2)}`)
 
-    return tweets.map(tweet => 48 + tweet.sentiment.score).flatMap(note => [ note, note + 12 ]).subscribe(play)
+            stdout.write(` ${chalk.green(sentiment.positive.map(cleaner).join(' '))}`)
+            stdout.write(` ${chalk.red(sentiment.negative.map(cleaner).join(' '))}\n`)
+        })
+        .finally(() => readable.emit('destroy'))
+        .map(tweet => 48 + tweet.sentiment.score)
+        .flatMap(note => [ note, note + 12 ])
+        .subscribe(play);
 }
 
 // talk_14_rx_twitter({ track: 'bieber', minFollowers: 500 }), undefined
