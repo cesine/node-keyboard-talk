@@ -9,9 +9,8 @@ module.exports = (key = 'C') => {
     const modes = Rx.Observable.of(progression)
         .combineLatest(Rx.Observable.range(0, progression.length))
         .map(([x,i]) => {
-            x = x.slice()
-            for (let j = 0; j < i; j++) x.push(x.shift())
-            return [x,i]
+            const seq = x.slice(i).concat(progression.slice(0, i))
+            return [seq, i]
         })
 
     const playModes = modes
@@ -20,7 +19,7 @@ module.exports = (key = 'C') => {
         .publish()
 
     playModes
-        .distinct((a, b) => { return a.i === b.i })
+        .distinct(o => o.i)
         .subscribe(({ i }) => process.stdout.write(`\n${key} ${modeNames[i]}:${i+1}`))
 
     playModes
