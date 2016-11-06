@@ -6,7 +6,7 @@ module.exports = ({ track, minFollowers }) => {
 
     const readable = twitterSentiment({ track, minFollowers })
 
-    const tweets = Rx.Observable.fromEvent(readable, 'data')
+    const tweets = Rx.Observable.fromEvent(readable, 'data').finally(() => readable.emit('destroy'))
 
     return tweets.map(tweet => 48 + tweet.sentiment.score).flatMap(note => [ note, note + 12 ])
 }
