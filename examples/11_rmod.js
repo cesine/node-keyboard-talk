@@ -3,7 +3,6 @@ const { sequence, play } = require('node-keyboard/lib/mappers')
 const Rx = require('node-keyboard/lib/rx')()
 
 module.exports = (key = 'C') => {
-    // modes with mode name
     const modeNames = ['Ionian', 'Dorian', 'Phrygian', 'Lydian', 'Mixolydian', 'Aeolian', 'Locrian']
     const progression = [2, 2, 1, 2, 2, 2, 1]
 

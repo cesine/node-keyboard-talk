@@ -12,5 +12,5 @@ module.exports = () => {
     //   .take('empire!'.length)
 }
 
-// var streamingRx = talk_07_rx_stream()
+// var streamingRx = talk_07_rs()
 // streamingRx.subscribe(c => process.stdout.write(c)), undefined

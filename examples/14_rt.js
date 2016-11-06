@@ -16,7 +16,7 @@ module.exports = ({ track, minFollowers }) => {
 
     const cleaner = profanity.clean.bind(profanity)
 
-    const { stdout } = process;
+    const { stdout } = process
 
     return tweets
         .do(({ sentiment }) => {
@@ -28,8 +28,8 @@ module.exports = ({ track, minFollowers }) => {
         .finally(() => readable.emit('destroy'))
         .map(tweet => 48 + tweet.sentiment.score)
         .flatMap(note => [ note, note + 12 ])
-        .subscribe(play);
+        .subscribe(play)
 }
 
-// talk_14_rx_twitter({ track: 'bieber', minFollowers: 500 }), undefined
+// talk_14_rt({ track: 'bieber', minFollowers: 500 }), undefined
 

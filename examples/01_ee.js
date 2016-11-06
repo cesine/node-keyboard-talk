@@ -6,6 +6,6 @@ module.exports = () => {
     return myEmitter
 }
 
-// var eventer = talk_01_eventemitter()
+// var eventer = talk_01_ee()
 // eventer.on('event', console.log), undefined
 // eventer.emit('event', 'empire!')

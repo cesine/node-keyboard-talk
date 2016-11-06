@@ -11,5 +11,5 @@ module.exports = () => {
     })
 }
 
-// var streamd = talk_03_stream_on_read()
+// var stream = talk_03_s()
 // stream.pipe(process.stdout), undefined
